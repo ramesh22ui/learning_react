@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import UseCallBack from './components/usecallback';
+import UseStateHook from './components/usestate';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello React Developers</h1>
-      <UseCallBack />
+      <UseStateHook />
     </div>
   );
 }
