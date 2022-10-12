@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {Stack,Box} from '@mui/material'
 {/**
 
@@ -7,7 +7,7 @@ import {Stack,Box} from '@mui/material'
 -- state allow us to access and update certain values in our components over time
 -- When we create a state variable, we must provide it a default value
    (which can be any data type)
--- We get that state variable as the first value in an ray, which we can destructure and declare with "const"
+-- We get that state variable as the first value in an array, which we can destructure and declare with "const"
 -- useSate also gives us a setter functions to update the state after it is created
 -- To update our state variable, we pass the setter function the new value we want our state to be. 
 -- useState can be used once or multiple times a single component.
@@ -24,6 +24,7 @@ const UseStateHook = () => {
         name:'',
         age:0
     })
+    const user1 = useContext(UserContext);
     const handleFlag = ()=>{
         setFlag(prev=>!prev)
     }
@@ -40,8 +41,8 @@ const UseStateHook = () => {
     }
   return (
    <>
-    <Stack>UseStateHook</Stack>
-    <Stack direction='row' spacing={2}>
+    <Stack>UseStateHook by {user1}</Stack>
+    <Stack direction='row' spacing={5}>
         <Box>Name:{name}</Box>
         <Box>Number: {number}</Box>
         <Box> {flag && 'True'}</Box>
